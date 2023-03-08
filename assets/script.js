@@ -34,14 +34,18 @@ fetch(requestUrl)
     var icon="http://openweathermap.org/img/wn/" + iconValue + ".png"
     var latitudeOfCity=weather.coord.lat
     var longitudeOfCity=weather.coord.lon
-
+ // Display the weather information on the page
     nameOfCity.textContent=weather.name
 container.append(nameOfCity)
-tempOfCity.textContent="Temp " + Math.round((weather.main.temp -273.15)* 9/5+32)
+tempOfCity.textContent="Temp: " + Math.round((weather.main.temp -273.15)* 9/5+32)
 container.append(tempOfCity)
-
-    // Display the weather information on the page
-
+windOfCity.textContent="Wind: " + weather.wind.speed + " MPH"
+container.append(windOfCity)
+humidityOfCity.textContent="Humidity " + weather.main.humidity + "%"
+container.append(humidityOfCity)
+var icon = document.createElement('img')
+icon.setAttribute('src', iconUrl)
+container.append(icon)
 
     var requestUv = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitudeOfCity + "&lon=" + longitudeOfCity + "&exclude={part}&appid=f30dc0b71f772a037a522282770190be";
 fetch(requestUv)
