@@ -11,7 +11,9 @@ I worked with a tutor for this assignment through the tutoring session for help 
 
 
 # Links
+https://github.com/karsodhi/06-Weather-Dashboard
 
+https://karsodhi.github.io/06-Weather-Dashboard/
 
 # Screenshots
 ![This is a weather dashboard](./images/workday.jpg)

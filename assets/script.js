@@ -41,10 +41,10 @@ tempOfCity.textContent="Temp: " + Math.round((weather.main.temp -273.15)* 9/5+32
 container.append(tempOfCity)
 windOfCity.textContent="Wind: " + weather.wind.speed + " MPH"
 container.append(windOfCity)
-humidityOfCity.textContent="Humidity " + weather.main.humidity + "%"
+humidityOfCity.textContent="Humidity: " + weather.main.humidity + "%"
 container.append(humidityOfCity)
 var icon = document.createElement('img')
-icon.setAttribute('src', iconUrl)
+icon.setAttribute('src', weather.main)
 container.append(icon)
 
     var requestUv = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitudeOfCity + "&lon=" + longitudeOfCity + "&exclude={part}&appid=f30dc0b71f772a037a522282770190be";
@@ -55,7 +55,7 @@ fetch(requestUv)
 .then(function(cityData) {
   console.log("hello", cityData)
   var uvRays=document.createElement("h2")
-  uvRays.textContent="UV " + cityData.current.uvi
+  uvRays.textContent="UV: " + cityData.current.uvi
   container.append(uvRays)
 })
   })
